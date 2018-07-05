@@ -11,7 +11,9 @@ void main()
 	time(&inicio);
 	signal(SIGALRM,fun1);
 	alarm(10);
+	printf("\nPrevio a dormirme...\n");
 	pause();
+	printf("\nMe despierto de nuevo\n");
 	time(&final);
 	resultado=(final-inicio);
 	printf("\nTiempo final= %d (segundos transcurridos desde las 00:00:00 GMT\n\t\t\t del 1 de enero de 1970)\n",final);
