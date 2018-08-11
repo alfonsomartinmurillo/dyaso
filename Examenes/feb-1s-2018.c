@@ -22,12 +22,15 @@ int main(int argc, char *argv[])
    if ( (pid=fork())==-1 ) {printf("Error fork\n"); exit(3);}
    if ( pid==0 )
        {
+       printf("El proceso hijo te saluda\n");
        if (signal(SIGUSR1,manejador)==SIG_ERR)
            {perror("Error signal"); exit(4);}
        pause();
        printf("¡Erroneo!\n");
-} else
+        } 
+    else
         {
+        printf("El proceso Padre te saluda\n");
         sleep(1);
         fd=open("texto.txt", O_RDWR|O_CREAT|O_TRUNC, 0666);
         if (fd==-1) {perror("Error open"); exit(5);}
