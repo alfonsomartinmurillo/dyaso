@@ -13,13 +13,13 @@ void main()
     
     if (pipe(tuberia)==-1) // Intento crear la tubería
     {
-        perror("pipe"); //Descripción de error
+        perror("Error al crear el pipe"); //Descripción de error
         exit(-1); // El programa finaliza
     }
     
     if ((pid=fork())==-1) // Genero un fork del proceso
     {
-        perror("fork");
+        perror("Error al crear el fork");
         exit(-1);
         
     }

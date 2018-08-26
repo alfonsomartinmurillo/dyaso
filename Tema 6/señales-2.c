@@ -9,7 +9,9 @@ void main()
          perror("\nError");
          exit(1);
     }
-    for (;;);
+    //for (;;);
+    printf("En espera a la recepción de señales");
+    pause();
 }
 
 void manejador (int sig)
